@@ -14,13 +14,11 @@ class Mitarbeiter:
     def __init__(self, name: str):
         self.name: str = name
 
-    def setzeAllgemeinesLimit(self, limit: int):
-        self.bestelllimit: int = limit
-        return self.bestelllimit
+    def setzeBestellLimit(self, limit: int):
+        self.bestelllimit = limit
 
     def setzeVorgesetzten(self, vorgesetzter: Vorgesetzter):
         self.vorgesetzter: Vorgesetzter = vorgesetzter
-        return vorgesetzter
 
     def darfBestellen(self, kosten: int):
         if kosten <= self.bestelllimit:

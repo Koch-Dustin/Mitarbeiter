@@ -1,6 +1,8 @@
 from mitarbeiter import Mitarbeiter
 from vorgesetzter import Vorgesetzter
 
+def setzeAllgemeintsLimit(limit : int):
+    Mitarbeiter.bestelllimit = limit
 
 def main():
     walterWinkelmann: Mitarbeiter = Mitarbeiter("Walter Winkelmann")
@@ -17,17 +19,17 @@ def main():
     print(hermannWichtiger.darfBestellen(15))
     print(hermannWichtiger.darfBestellen(25))
 
-    walterWinkelmann.setzeAllgemeinesLimit(30)
+    walterWinkelmann.setzeBestellLimit(30)
     print(walterWinkelmann.bekommeBestelllimit())
     print(walterWinkelmann.darfBestellen(21))
     print(hermannWichtiger.darfBestellen(25))
 
-    waltraudWichtig.setzeBestelllimit(10)
+    waltraudWichtig.setzeBestellLimit(10)
     print(waltraudWichtig.bekommeBestelllimit())
     print(waltraudWichtig.darfBestellen(10))
     print(waltraudWichtig.darfBestellen(11))
 
-    waltraudWichtig.setzeBestelllimit(5000)
+    waltraudWichtig.setzeBestellLimit(5000)
     print(waltraudWichtig.darfBestellen(2000))
     print(waltraudWichtig.darfBestellen(7000))
 
