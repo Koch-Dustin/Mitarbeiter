@@ -60,7 +60,7 @@ class Mitarbeiter:
             return
 
     def gibHierarchie(self, mitarbeiter: Mitarbeiter):
-        if self.vorgesetzter == None and self.__class__.__name__ == "Mitarbeiter":
+        if mitarbeiter.vorgesetzter == None and mitarbeiter.__class__.__name__ == "Mitarbeiter":
             print(f"Freier Mitarbeiter {self.name}")
         else:
             hierachie = []
