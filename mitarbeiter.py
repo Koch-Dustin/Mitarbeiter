@@ -14,6 +14,10 @@ class Mitarbeiter:
     def __init__(self, name: str):
         self.name: str = name
 
+    def setzeAllgemeintsLimit(limit: int):
+        Mitarbeiter.bestelllimit = limit
+
+    @classmethod
     def setzeBestellLimit(self, limit: int):
         self.bestelllimit = limit
 
@@ -59,8 +63,12 @@ class Mitarbeiter:
         else:
             return
 
+    @staticmethod
     def gibHierarchie(self, mitarbeiter: Mitarbeiter):
-        if mitarbeiter.vorgesetzter == None and mitarbeiter.__class__.__name__ == "Mitarbeiter":
+        if (
+            mitarbeiter.vorgesetzter == None
+            and mitarbeiter.__class__.__name__ == "Mitarbeiter"
+        ):
             print(f"Freier Mitarbeiter {self.name}")
         else:
             hierachie = []
