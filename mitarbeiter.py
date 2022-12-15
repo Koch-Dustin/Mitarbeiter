@@ -14,10 +14,9 @@ class Mitarbeiter:
     def __init__(self, name: str):
         self.name: str = name
 
-    def setzeAllgemeintsLimit(limit: int):
-        Mitarbeiter.bestelllimit = limit
+    def setzeAllgemeinesLimit(self, limit: int):
+        self.bestelllimit = limit
 
-    @classmethod
     def setzeBestellLimit(self, limit: int):
         self.bestelllimit = limit
 
@@ -57,13 +56,12 @@ class Mitarbeiter:
             f"Ich bin {self.__class__.__name__}, Name {self.name}. Mein Bestellimit ist {self.bestelllimit} EUR."
         )
 
-    def getVorgesetzten(self):
+    def gibVorgesetzten(self):
         if self.vorgesetzter is not None:
             return self.vorgesetzter
         else:
             return
 
-    @staticmethod
     def gibHierarchie(self, mitarbeiter: Mitarbeiter):
         if (
             mitarbeiter.vorgesetzter == None
@@ -72,13 +70,13 @@ class Mitarbeiter:
             print(f"Freier Mitarbeiter {self.name}")
         else:
             hierachie = []
-            chef = mitarbeiter.getVorgesetzten()
+            chef = mitarbeiter.gibVorgesetzten()
 
             while True:
                 try:
                     chefdata = f"{chef.__class__.__name__} {chef.name}"
                     hierachie.insert(0, chefdata)
-                    chef = chef.getVorgesetzten()
+                    chef = chef.gibVorgesetzten()
                 except AttributeError:
                     break
 
