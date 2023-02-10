@@ -15,8 +15,8 @@ class Mitarbeiter:
         self.name: str = name
 
     @classmethod
-    def setzeBestellLimit(self, limit: int):
-        self.bestelllimit = limit
+    def setzeBestellLimit(cls, limit: int):
+        cls.bestelllimit = limit
 
     def setzeVorgesetzten(self, vorgesetzter: Vorgesetzter):
         self.vorgesetzter: Vorgesetzter = vorgesetzter
