@@ -14,9 +14,7 @@ class Mitarbeiter:
     def __init__(self, name: str):
         self.name: str = name
 
-    def setzeAllgemeinesLimit(self, limit: int):
-        self.bestelllimit = limit
-
+    @classmethod
     def setzeBestellLimit(self, limit: int):
         self.bestelllimit = limit
 

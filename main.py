@@ -2,10 +2,6 @@ from mitarbeiter import Mitarbeiter
 from vorgesetzter import Vorgesetzter
 
 
-def setzeAllgemeinesLimit(limit: int):
-    Mitarbeiter.bestelllimit = limit
-
-
 def main():
     walterWinkelmann: Mitarbeiter = Mitarbeiter("Walter Winkelmann")
     waltraudWichtig: Vorgesetzter = Vorgesetzter("Waltraud Wichtig")
